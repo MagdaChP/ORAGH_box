@@ -1,0 +1,97 @@
+// Czy nie mogę używać @extend wewnątrz @media?
+%menuStyle {   
+    list-style-type: none;
+    line-height: 2em;
+    font-weight: 700;
+    background-color: rgba(222, 184, 135, 0.5);
+    padding: 0 0.5em;
+    margin-bottom: 0.2em;
+    border-radius: 2px;
+}
+
+.menuWrapper{
+    position: relative;
+    display: block;
+}
+.bigMenu {
+    position: absolute;
+    right: 100%;
+    @extend %menuStyle;
+}
+
+.mobileMenu {
+    height: 30px;
+    // width: 30px;
+    background: url('../images/hamburger.svg') no-repeat top left;
+    border-radius: 5px;
+    span {
+        padding: 0 0 0 50px;
+        line-height: 25px;
+        font-weight: 600;
+        display: inline-block;
+    }
+}
+
+.bigMenu.active {
+    position: absolute;
+    right: 60%;
+    }
+
+@media (min-width: 1024px) {
+        .mobileMenu {
+            display: none;
+        }
+        .bigMenu {
+            position: sticky;
+            top: 0;
+            display: block;
+            &>ul {
+                padding: 1em;
+                &>li {
+                    list-style-type: none;
+                    line-height: 2em;
+                    font-weight: 700;
+                    background-color: rgba(222, 184, 135, 0.5);
+                    padding: 0 0.5em;
+                    margin-bottom: 0.2em;
+                    border-radius: 2px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #ba491c;
+                        box-shadow: 5px 10px 8px #772f135b;
+                        width: 101%;
+                    }
+                    &:last-child {
+                        &:hover {
+                        background-color: #9b0c0c;
+                        box-shadow: 5px 10px 8px #772f135b;
+                        width: 101%;
+                        color: white;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+    #categories {
+        //@extend %menuStyle;
+        ul {
+            padding: 1em;
+            li {
+                list-style-type: none;
+                line-height: 2em;
+                font-weight: 700;
+                background-color: rgba(222, 184, 135, 0.5);
+                padding: 0 0.5em;
+                margin-bottom: 0.2em;
+                border-radius: 2px;
+                &:hover {
+                    background-color: #ac431a;
+                    box-shadow: 5px 10px 8px #772f1373;
+                    width: 101%;
+                }
+            }
+        }
+    }

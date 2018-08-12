@@ -1,0 +1,11 @@
+.loginForm{
+    padding: 2%;
+    margin: 0 auto;
+    width: 80%;
+    @media(min-width: 1024px) {
+        width: 35%;
+    }
+    form {
+        padding: 2%;
+    }
+}

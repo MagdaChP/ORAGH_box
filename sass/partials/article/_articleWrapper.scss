@@ -1,0 +1,14 @@
+.articleWrapper {
+    box-sizing: border-box;
+    padding-left: 1em;
+        article {
+        color: brown;
+        
+        padding: 1em;
+        margin: 0 auto;
+        border-bottom: 2px solid grey;
+            p {
+                padding: 1em 0;
+            }
+        }
+}

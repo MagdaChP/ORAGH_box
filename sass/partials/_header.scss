@@ -1,0 +1,41 @@
+%mainTitle {
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: right;
+    font-weight: 900;
+    line-height: 1.5em;
+    font-style: italic;
+}
+
+header {
+    div {
+        background-image: url('../images/header.png');
+        background-color: grey;
+        height: 200px;
+        width: 100%;
+        // display: flex;
+        // justify-content: flex-end;
+        // align-items: flex-end;
+        // flex-wrap: wrap;
+        position: relative;
+        h1 {
+            font-size: 1.7em;
+            position: absolute;
+            right: 0;
+            bottom: 40px;
+            right: 10px;
+            span {
+                @extend %mainTitle;
+            }
+        }
+        h2 {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            right: 10px;
+            span {
+                @extend %mainTitle;
+            }
+        }
+    }
+}
