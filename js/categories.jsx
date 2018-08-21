@@ -12,7 +12,7 @@ export class Categories extends React.Component {
     }
     render() {
         return (
-            <ul className="showCategories"> 
+            <ul> 
                 <li> Koncerty </li>
                 <li> Próby </li>
                 <li> Sekcje </li>

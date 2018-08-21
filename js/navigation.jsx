@@ -25,7 +25,7 @@ export class Navigation extends React.Component {
         })
     }
     changeClass = () => {
-        console.log('klikam w hamburgera');
+        //console.log('klikam w hamburgera');
         this.setState({
             menuOpen: !this.state.menuOpen
         })
@@ -37,7 +37,7 @@ export class Navigation extends React.Component {
                     <div className="mobileMenu" onClick={this.changeClass}>
                         <span> Aktualna kategoria </span>
                     </div>
-                    <ul className={`bigMenu ${this.state.menuOpen ? 'active' : ''}`} onClick={this.changeClass}>
+                    <ul className={`bigMenu ${this.state.menuOpen ? 'active' : ''}`}>
                         <li id="news" key="menuElements-00"> Aktualności  </li>
 
                         <li id="categories" key="menuElements-01" onClick={this.showCategories}> Kategorie

@@ -1,27 +1,33 @@
 %formStyle {
     border: 0px solid rgba(222, 184, 135, 0.555);
-    border-left: 2px solid #ba491c;
+    border-left: 2px solid $hoverColor;
     border-radius: 3px;
     display: block;
     margin: 0.2em;
     margin-top: 0.4em;
-    background-color: rgba(222, 184, 135, 0.555);
+    background-color: $mainColor;
     letter-spacing: 0.2em;
     padding: 0.4em;
 }
 
 .addPostWraper {
-    width: 60vw;
-    height: 84vh;
+    width: 100vw;
+    height: 80
+    vh;
     background-color: white;
     position: fixed;
     z-index: +1;
     top: 10%;
-    right: 11%;
+    right: 0%;
     border-radius: 2px;
+    border: 2px solid rgb(85, 16, 16);
     padding: 0.5em;
-    overflow: auto;
-    //pointer-events: none;
+   // overflow: auto; //pointer-events: none;
+    @media (min-width: 1024px) {
+        width: 60vw;
+        height: 84vh;
+        right: 11%;
+    }
 }
 
 form {
@@ -46,13 +52,12 @@ form {
     }
     button {
         margin-right: 2%;
-        background-color: #ba491c;
-        border: 1px solid #ba491c;
+        background-color: $hoverColor;
+        border: 1px solid $hoverColor;
         border-radius: 1px;
-        box-shadow: 4px 4px 7px #772f135b;
+        box-shadow: 4px 4px 7px $shadowColor;
         &:hover {
-            box-shadow: 6px 6px 5px #772f135b;
+            box-shadow: 6px 6px 5px $shadowColor;
         }
     }
 }
-
