@@ -8,25 +8,38 @@ export class AddPost extends React.Component {
         this.state = {
             category: 'koncerty',
             title: '',
-            description: ''
+            description: '',
+            postItem: []
         }
     }
     changeCategory = (e) => {
-        this.state({
+        this.setState({
             category: e.target.value
         })
     }
     showTitle = (e) => {
-        {
-            this.state({
-                title: e.target.value
-            })
-        }
+        this.setState({
+            title: e.target.value
+        })
     }
     showDescription = (e) => {
-        this.state({
+        this.setState({
             description: e.target.value
         })
+    }
+    newPost = (e) => {
+        console.log('przycisk dodawania');
+        e.preventDefault();
+        if (this.state.description !== '') {
+            //console.log('wchodzę do ifa')
+            let newPost = {
+                text: this.state.description,
+                category: this.state.category
+            }; console.log(newPost);
+            this.setState({
+                postItem: this.state.postItem.concat(newPost)
+            }, () => console.log(this.state))
+        }
     }
     render() {
         return (
@@ -47,14 +60,13 @@ export class AddPost extends React.Component {
                 <label> Treść wpisu:
                 <textarea type="text" value={this.state.description} onChange={this.showDescription} />
                 </label>
-                <button> Dodaj </button>
+                <button onClick={this.newPost}> Dodaj </button>
                 <button> Anuluj </button>
             </form>
         )
     }
 }
 ReactDOM.render(
-    <AddPost />,
-    // <AddPost categories={['koncerty', 'próby', 'sekcje', 'kotłownia']} />,
+    <AddPost postData={this.state.postItem}/>,
     document.getElementById('app')
 );
