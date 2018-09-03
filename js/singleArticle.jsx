@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ArticleHeader } from './articleHeader';
+import { ArticleHeader } from './articleHeader.jsx';
 
 export class SingleArticle extends React.Component {
     render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { SingleArticle } from './singleArticle';
+import { SingleArticle } from './singleArticle.jsx';
 
 export class ArticleWrapper extends React.Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ArticleWrapper } from './articleWrapper';
-import { Navigation } from './navigation';
+import { ArticleWrapper } from './articleWrapper.jsx';
+import { Navigation } from './navigation.jsx';
 
 export class Section extends React.Component {
     constructor (props) {

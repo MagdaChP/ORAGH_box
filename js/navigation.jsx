@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Categories } from './categories';
-import { AddPost } from './addPost';
+import { Categories } from './categories.jsx';
+import { AddPost } from './addPost.jsx';
 
 export class Navigation extends React.Component {
     constructor(props) {
