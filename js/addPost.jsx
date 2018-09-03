@@ -8,8 +8,7 @@ export class AddPost extends React.Component {
         this.state = {
             category: 'koncerty',
             title: '',
-            description: '',
-            postItem: []
+            description: ''
         }
     }
     changeCategory = (e) => {
@@ -28,18 +27,21 @@ export class AddPost extends React.Component {
         })
     }
     newPost = (e) => {
-        console.log('przycisk dodawania');
         e.preventDefault();
-        if (this.state.description !== '') {
-            //console.log('wchodzę do ifa')
-            let newPost = {
-                text: this.state.description,
-                category: this.state.category
-            }; console.log(newPost);
-            this.setState({
-                postItem: this.state.postItem.concat(newPost)
-            }, () => console.log(this.state))
+        let newPost = {
+                    text: this.state.description,
+                    category: this.state.category
+                }
+                console.log(newPost);
+        if (typeof this.props.addPost == 'function') {
+            console.log('kliknięcie');
+            this.props.addPost(newPost);
         }
+    }
+    dismissPost = (e) => {
+        console.log('dismiss post button');
+        this.props.display = false;
+        
     }
     render() {
         return (
@@ -61,12 +63,12 @@ export class AddPost extends React.Component {
                 <textarea type="text" value={this.state.description} onChange={this.showDescription} />
                 </label>
                 <button onClick={this.newPost}> Dodaj </button>
-                <button> Anuluj </button>
+                <button onClick={this.dismissPost}> Anuluj </button>
             </form>
         )
     }
 }
 ReactDOM.render(
-    <AddPost postData={this.state.postItem}/>,
+    <AddPost />,
     document.getElementById('app')
 );

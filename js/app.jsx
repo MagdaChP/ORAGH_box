@@ -10,9 +10,10 @@ import {
  import Redirect from 'react-router/Redirect';
  
  import { Header } from './header.jsx';
- import { Section } from './section.jsx';
  import { Footer } from './footer.jsx';
  import { LoginPage } from './loginPage.jsx';
+ import { Section } from './section.jsx';
+ import { LogOut } from './logOut.jsx';
  
  const history = createBrowserHistory();
 
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <Switch>
                                 <Route exact path='/' component={LoginPage} />
                                 <Route exact path='/section' component={Section} />
+                                <Route exact path='/logOut' component={LogOut} />
                             </Switch>
                         </div>
                     <Footer />

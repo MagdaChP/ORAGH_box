@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Categories } from './categories.jsx';
-import { AddPost } from './addPost.jsx';
-
-// let menuElements = ['Aktualności', 'Kategorie', 'ShitBox', 'Nowy wpis', 'Wyloguj']
+import { Categories } from './categories';
+import { AddPost } from './addPost';
 
 export class Navigation extends React.Component {
     constructor(props) {
@@ -11,7 +9,7 @@ export class Navigation extends React.Component {
         this.state = {
             categories: false,
             addPost: false,
-            menuOpen: false
+            menuOpen: false,
         }
     }
     showCategories = () => {
@@ -29,6 +27,17 @@ export class Navigation extends React.Component {
         this.setState({
             menuOpen: !this.state.menuOpen
         })
+    }
+    logOut = () => {
+        console.log('przycisk wyloguj')
+        firebase.auth().signOut().then(() => {
+            // Sign-out successful.
+                console.log('wylogowano', this.props.history);
+                this.props.history.push('/logOut');
+          }).catch(function(error) {
+            // An error happened.
+            console.log('cokolwiek', error);
+          });
     }
     render() {
         return (
@@ -50,16 +59,15 @@ export class Navigation extends React.Component {
 
                         <li id="newPost" key="menuElements-03" onClick={this.addPost}> Nowy wpis </li>
                         <div className="addPostWraper" style={{ display: this.state.addPost ? 'block' : 'none' }}>
-                            <AddPost />
+                            <AddPost addPost={this.props.addPostMethod}/>
                         </div>
-
-                        <li id="logout" key="menuElements-04"> Wyloguj </li>
+                            <li id="logout" key="menuElements-04" onClick={this.logOut}> Wyloguj </li>
                     </ul>
                 </asside>
             </nav>)
+        }
     }
-}
-ReactDOM.render(
+    ReactDOM.render(
     <Navigation />,
-    document.getElementById('app')
-);
+                document.getElementById('app')
+            );

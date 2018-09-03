@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory } from "react-router";
 
 export class LoginPage extends React.Component {
     constructor(props) {
@@ -24,14 +23,13 @@ export class LoginPage extends React.Component {
         e.preventDefault();
         const email = this.state.email;
         const password = this.state.password;
-        console.log('klik');
 
         firebase.auth().signInWithEmailAndPassword(email, password).then((resp) => {
             console.log(resp);
             this.setState({
                 login: true
             }, () => {
-                console.log(this.state)
+                console.log(this.props.history)
                 this.props.history.push('/section')
             })
         }).catch((error) => {

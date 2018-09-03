@@ -10,7 +10,6 @@ export class ArticleHeader extends React.Component {
                     <h3> Tytuł (kategoria) </h3>
                     <h4> Imię Nazwisko </h4>
                 </div>
-
             </div>)
     }
 }
