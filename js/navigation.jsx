@@ -8,7 +8,7 @@ export class Navigation extends React.Component {
         super(props);
         this.state = {
             categories: false,
-            addPost: false,
+            showAddPost: false,
             menuOpen: false,
         }
     }
@@ -17,9 +17,9 @@ export class Navigation extends React.Component {
             categories: !this.state.categories
         })
     }
-    addPost = () => {
+    toggleAddPost = () => {
         this.setState({
-            addPost: !this.state.addPost
+            showAddPost: !this.state.showAddPost
         })
     }
     changeClass = () => {
@@ -57,9 +57,9 @@ export class Navigation extends React.Component {
 
                         <li id="shitBox" key="menuElements-02"> ShitBox </li>
 
-                        <li id="newPost" key="menuElements-03" onClick={this.addPost}> Nowy wpis </li>
-                        <div className="addPostWraper" style={{ display: this.state.addPost ? 'block' : 'none' }}>
-                            <AddPost addPost={this.props.addPostMethod}/>
+                        <li id="newPost" key="menuElements-03" onClick={this.toggleAddPost}> Nowy wpis </li>
+                        <div className="addPostWraper" style={{ display: this.state.showAddPost ? 'block' : 'none' }}>
+                            <AddPost addPost={this.props.addPostMethod} hide={this.toggleAddPost}/>
                         </div>
                             <li id="logout" key="menuElements-04" onClick={this.logOut}> Wyloguj </li>
                     </ul>

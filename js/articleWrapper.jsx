@@ -22,7 +22,7 @@ export class ArticleWrapper extends React.Component {
                     { this.state.articleListEl !== undefined &&
                         this.state.articleListEl.map((e) => {
                             console.log('map');
-                            return <SingleArticle postText={e.text} />
+                            return <SingleArticle postText={e.text} postTitle={e.title} />
                         })
                     }
 

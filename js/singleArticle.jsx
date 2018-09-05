@@ -6,7 +6,7 @@ export class SingleArticle extends React.Component {
     render() {
         return (
             <article>
-                <ArticleHeader />
+                <ArticleHeader headerTitle={this.props.postTitle}/>
                 <p>{this.props.postText}</p>
             </article>)
     }

@@ -29,10 +29,11 @@ export class AddPost extends React.Component {
     newPost = (e) => {
         e.preventDefault();
         let newPost = {
-                    text: this.state.description,
-                    category: this.state.category
-                }
-                console.log(newPost);
+            title: this.state.title,
+            text: this.state.description,
+            category: this.state.category
+        }
+        console.log(newPost);
         if (typeof this.props.addPost == 'function') {
             console.log('kliknięcie');
             this.props.addPost(newPost);
@@ -40,8 +41,8 @@ export class AddPost extends React.Component {
     }
     dismissPost = (e) => {
         console.log('dismiss post button');
-        this.props.display = false;
-        
+        this.props.hide();
+
     }
     render() {
         return (
