@@ -21,8 +21,9 @@ export class ArticleWrapper extends React.Component {
                     {console.log('props ze state', this.state.articleListEl)}
                     { this.state.articleListEl !== undefined &&
                         this.state.articleListEl.map((e) => {
+                            console.log(e.title);
                             console.log('map');
-                            return <SingleArticle postText={e.text} postTitle={e.title} />
+                            return <SingleArticle postText={e.text} postTitle={e.title} postCategory={e.category} />
                         })
                     }
 

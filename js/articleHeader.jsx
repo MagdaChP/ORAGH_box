@@ -7,7 +7,7 @@ export class ArticleHeader extends React.Component {
             <div className="articleHeader">
                 <div className="personPhoto">  </div>
                 <div className="articleTitleWraper">
-                    <h3> {this.props.articleHeader} </h3>
+                    <h3> {this.props.headerTitle} ({this.props.headerCategory}) </h3>
                     <h4> Imię Nazwisko </h4>
                 </div>
             </div>)

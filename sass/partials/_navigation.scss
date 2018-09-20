@@ -9,11 +9,19 @@
     border-radius: 2px;
 }
 
+nav{
+    display: flex;
+    align-content: flex-start;
+}
+
 .menuWrapper {
     position: relative;
 }
 
 .mobileMenu {
+    position: relative;
+    left: 0%;
+    top: 0%;
     height: 30px; // width: 30px;
     background: url('../images/hamburger.svg') no-repeat top left;
     border-radius: 5px;

@@ -8,6 +8,7 @@ $break-points: (xs: 1024px );
 .container {
 	display: flex;
 	flex-direction: column;
+	overflow: auto;
 	width: 100%;
 	@for $index from 1 through $number-of-columns {
 			.col-xs-#{$index}{

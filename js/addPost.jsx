@@ -1,6 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Set the configuration for your app
+  // TODO: Replace with your project's config object
+//   var config = {
+//     apiKey: "AIzaSyA5oldZNng7AEtsnXjl90TJxOqYCRJH7EY",
+//     authDomain: "oraghbox.firebaseapp.com",
+//     databaseURL: "https://oraghbox.firebaseio.com",
+//     storageBucket: "oraghbox.appspot.com"
+//   };
+  //firebase.initializeApp(config);
+
+  // Get a reference to the database service
+  var database = firebase.database();
 
 export class AddPost extends React.Component {
     constructor(props) {
@@ -38,6 +50,10 @@ export class AddPost extends React.Component {
             console.log('kliknięcie');
             this.props.addPost(newPost);
         }
+        fetch('https://oraghbox.firebaseio.com', {
+            method : 'POST',
+            body: JSON.stringify( newPost )
+          });
     }
     dismissPost = (e) => {
         console.log('dismiss post button');
